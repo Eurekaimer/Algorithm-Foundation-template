@@ -1,0 +1,95 @@
+% Preface: LaTeX template for homework assignments
+% Author: Eurekaimer@NKU
+% License: CC BY-NC-SA 4.0
+% 该模板适用于撰写算法基础等课程的作业报告，包含伪代码和代码框的支持，NKU统院学生可直接使用
+
+\documentclass[12pt, a4paper, oneside]{ctexart}
+
+\usepackage[UTF8]{ctex}
+
+% --- 核心宏包 ---
+\usepackage{amsmath,amssymb}    % 数学公式和符号
+\usepackage{algorithm}         % 伪代码环境
+\usepackage{algpseudocode}     % 伪代码命令集
+\usepackage{graphicx}           % 插入图片
+\usepackage{float}              % 控制浮动体位置
+\usepackage{enumitem}           % 增强列表功能
+\usepackage{amsthm, bm, color, framed, hyperref, mathrsfs}
+
+% --- 画框和行号宏包 ---
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% --- 页面和字体设置 ---
+\usepackage{geometry}
+\geometry{left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm}
+%% 控制页边距
+\setlength{\parindent}{2em}     % 段落首行缩进
+\setlength{\parskip}{0.5em}     % 段落间距
+
+%% 导入lipsum宏包以生成示例文本
+\usepackage{lipsum}             % 生成示例文本
+
+% --- 问题环境 ---
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+
+\newenvironment{problem}[1]{%
+    \begin{shaded}\par\noindent\textbf{#1. }% 直接使用传入的参数作为标题内容
+}{%
+    \end{shaded}\par
+}
+
+
+% --- 页眉设置 ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{姓名：XXX\quad 学号：YYYYYYYY}
+\fancyhead[C]{算法基础}
+\fancyhead[R]{第一次作业}
+
+\begin{document}
+
+
+\newpage
+
+\begin{problem}{1}
+    \href{https://leetcode.cn/problems/3sum/description/}{Leetcode 15 三数之和}
+\end{problem}
+
+\noindent\textbf{\large{Leetcode通过截图}}\\
+\begin{figure}[H]  % [H]强制占位符在当前位置，避免浮动
+    \centering  % 占位符居中对齐
+    % 生成宽为页面宽度、高5cm的占位符，文字提示“图片占位符：示例图”
+    \includegraphics[width=\textwidth, height=5cm, 
+                     keepaspectratio=false]{example-image-a}
+    \caption{这是图片的实际标题}  % 真实图片标题
+    \label{fig:placeholder}  % 标签，后续可交叉引用（如“见图\ref{fig:placeholder}”）
+\end{figure}
+
+\noindent\textbf{\large{算法描述}}\\
+
+\lipsum[3][1]  % 生成一段示例文本
+
+\vspace{10pt}
+
+\noindent\textbf{\large{伪代码}}\\
+
+\begin{algorithm}[H]
+    \caption{求和算法}
+    \begin{algorithmic}[1]
+        \Require 一个整数列表 $L$
+        \Ensure 列表中所有元素的和
+        \State total $\gets 0$
+        \For{每个元素 $e$ 在列表 $L$ 中}
+            \State total $\gets$ total $+ e$
+        \EndFor
+        \State \Return total
+    \end{algorithmic}
+\end{algorithm}
+
+\noindent\textbf{\large{复杂度分析}}\\
+
+\lipsum[3][2]  % 生成一段示例文本
+
+\end{document}
