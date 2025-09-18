@@ -5,6 +5,4 @@
 
 大致效果如图所示：
 
-
-
-![hw template](hw template.jpg)
+<img src="./hw template.jpg" alt="" />
